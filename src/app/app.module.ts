@@ -20,7 +20,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [EmployeeService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
