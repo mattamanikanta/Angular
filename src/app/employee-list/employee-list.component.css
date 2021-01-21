@@ -1,0 +1,7 @@
+.card-body{
+    background-color: grey;
+}
+.card{
+    margin: 30px;
+    border: 1px solid red;
+}
