@@ -1,12 +1,35 @@
-<app-header (childEvent)="message=$event" [parentData]="value"></app-header>
-
-<input [(ngModel)]="name" type="text">
-<p>{{name}}</p>
-<h1>{{message | uppercase}}</h1>
-<h1>{{message | lowercase}}</h1>
-<h1>{{message | titlecase}}</h1>
-<h1>{{message | slice:3:5}}</h1>
-<h1>{{person | json}}</h1>
-
-<app-employee-list></app-employee-list>
+<div class="container">
+  <form #myForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp" [(ngModel)]="userObj.email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="userObj.password">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addUser(myForm.value)"
+    *ngIf="!isEdit">Submit</button>
+    <button class="btn btn-info" (click)="updateUser()" *ngIf="isEdit">Update</button>
+  </form>
+<br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of allUsers">
+      <td>{{ user.email }}</td>
+      <td>{{ user.password }}</td>
+      <td><button (click)="editUser(user)" class="btn btn-warning">Edit</button></td>
+      <td><button (click)="deleteUser(user)" class="btn btn-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 <router-outlet></router-outlet>

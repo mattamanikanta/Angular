@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "prasad@gmail.com",
+      "password": "258369",
+      "id": 3
+    },
+    {
+      "email": "mani.m@cloudseed.io",
+      "password": "venkat",
+      "id": 4
+    },
+    {
+      "email": "manikanta@gmai.com",
+      "password": "M123asd",
+      "id": 5
+    }
+  ]
+}
